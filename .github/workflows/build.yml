@@ -44,5 +44,9 @@ jobs:
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"PerezVitor_Application" /o:"perezvitor" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build --no-incremental --configuration Release
-          dotnet test --collect "Code Coverage"
+          coverlet .\test\App.Tests\bin\Release\net6.0\App.Tests.dll
+            --target "dotnet" 
+            --targetargs "test --no-build"
+            -f=opencover 
+            -o="coverage.xml"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"

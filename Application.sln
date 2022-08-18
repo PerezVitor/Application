@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8090D53F-449
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B1A1C62B-6F40-4412-936D-1753D28D4408}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "src\App\App.csproj", "{481F7333-4FD6-4891-8248-1B5D70B49F54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "src\App\App.csproj", "{481F7333-4FD6-4891-8248-1B5D70B49F54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Tests", "test\App.Tests\App.Tests.csproj", "{1EA132D4-AFC2-47E6-9B1D-D7910E221F14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Tests", "test\App.Tests\App.Tests.csproj", "{1EA132D4-AFC2-47E6-9B1D-D7910E221F14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
