@@ -42,7 +42,17 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: pwsh
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"PerezVitor_Application" /o:"perezvitor" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          .\.sonar\scanner\dotnet-sonarscanner begin 
+            /k:"PerezVitor_Application" 
+            /o:"perezvitor" 
+            /d:sonar.login="${{ secrets.SONAR_TOKEN }}" 
+            /d:sonar.host.url="https://sonarcloud.io"
+            /d:sonar.cs.opencover.reportsPaths=coverage.xml
           dotnet build --no-incremental --configuration Release
-          coverlet .\test\App.Tests\bin\Release\net6.0\App.Tests.dll --target "dotnet" --targetargs "test --no-build" -f=opencover -o="coverage.xml"
+          coverlet .\test\App.Tests\bin\Release\net6.0\App.Tests.dll 
+            --target "dotnet" 
+            --targetargs "test 
+            --no-build" 
+            -f=opencover 
+            -o="coverage.xml"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
